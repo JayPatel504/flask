@@ -1,3 +1,3 @@
 # flask
 
-![alt text](https://github.com/jaypatel504/flask/blob/main/Capture.png?raw=true)
+![alt text](https://github.com/JayPatel504/flask/blob/main/Capture.PNG?raw=true)
