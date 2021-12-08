@@ -1,7 +1,6 @@
 version: "3.2"
 services:
   flask:
-    network_mode: "host"
     build: .
     restart: always
     environment:
@@ -13,7 +12,6 @@ services:
     volumes:
       - .:/home/myuser
   nginx:
-    network_mode: "host"
     build: ./nginx
     container_name: nginx
     restart: always
