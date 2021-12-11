@@ -3,7 +3,11 @@ from flask import Flask, redirect, url_for, request, render_template, flash
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
-@app.route('/', methods = ['GET','POST'])
+@app.route('/', methods = ['GET'])
+def home():
+    return render_template('index.html')
+
+@app.route('/cal', methods = ['GET','POST'])
 def calc():
     new_csv=[]
     try:

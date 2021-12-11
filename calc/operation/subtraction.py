@@ -1,7 +1,5 @@
 """Subtraction Class"""
-import pprint
-
-from calc.calculations.calculation import Calculation
+from operation.calculation import Calculation
 
 class Subtraction(Calculation):
     """subtraction calculation object"""
@@ -9,6 +7,5 @@ class Subtraction(Calculation):
         """get the subtraction results"""
         difference_of_values = 0.0
         for value in self.values:
-            difference_of_values =   difference_of_values - value
-            pprint.pprint(value)
+            difference_of_values = difference_of_values - value
         return difference_of_values
