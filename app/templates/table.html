@@ -36,19 +36,19 @@
         <table id="data" class="table table-striped text-white">
             <thead>
             <tr>
-                <th>Value 1</th>
-                <th>Operation</th>
-                <th>Value 2</th>
-                <th>Result</th>
+                <th>{{df.columns[0]}}</th>
+                <th>{{df.columns[1]}}</th>
+                <th>{{df.columns[2]}}</th>
+                <th>{{df.columns[3]}}</th>
             </tr>
             </thead>
             <tbody>
-                {% for line in csv %}
+                {% for index,row in df.iterrows() %}
                 <tr>
-                    <td>{{line[0]}}</td>
-                    <td>{{line[1]}}</td>
-                    <td>{{line[2]}}</td>
-                    <td>{{line[3]}}</td>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
                 </tr>
                 {% endfor %}
             </tbody>

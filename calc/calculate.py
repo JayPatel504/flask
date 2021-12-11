@@ -3,7 +3,7 @@ from calc.history.calculator import Calculator
 
 #the calculator class just contains the methods to calculate
 class Calculate:
-    """ This is the Calculator class"""
+    """ This is the Calculate class"""
     #the calculator class just calls methods on Calculator class
     @staticmethod
     def get_last_result_value():
@@ -35,9 +35,9 @@ class Calculate:
     def getHistory():
         """ Get history """
         return Calculator.history
-    def getHistoryFromCSV():
+    def getDF():
         """Read from CSV"""
-        return Calculator.readHistoryFromCSV()
+        return Calculator.getdf()
     @staticmethod
     def writeHistoryToCSV():
         """Write to CSV """

@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, request, render_template, flash
-
+from ..calc.calculate import Calculate
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
@@ -39,16 +39,7 @@ def calc():
 
 @app.route('/results', methods = ['GET'])
 def results():
-    new_csv=[]
-    try:
-        with open('history.csv', 'r') as reader:
-            csv = reader.read().split('\n')
-        for line in csv:
-            new_csv.append(line.split(','))
-    except Exception as e:
-        print(e)
-    if request.method == 'GET': 
-        return render_template('table.html', title='Bootstrap Table', csv=reversed(new_csv))
+    return render_template('table.html', title='Bootstrap Table', df=Calculate.getDF())
 
 if __name__ == '__main__':
    app.run(debug = True,port=7894)
