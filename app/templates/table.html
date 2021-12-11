@@ -1,0 +1,74 @@
+<html>
+    <body class="bg-secondary">
+        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-flex">
+        <div class="">
+            <a class="navbar-brand" href="">Where is this?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="ml-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ url_for('calc') }}">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link btn btn-outline-success" href="{{ url_for('results') }}">Table<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-secondary" href="#">Browser Wars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-secondary" href="#">Internet Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="card bg-dark" style="margin-top: 100px; margin-bottom: 75px;">
+        <div class="card-body text-white">
+
+    {% extends "base.html" %}
+
+    {% block content %}
+        <table id="data" class="table table-striped text-white">
+            <thead>
+            <tr>
+                <th>Value 1</th>
+                <th>Operation</th>
+                <th>Value 2</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for line in csv %}
+                <tr>
+                    <td>{{line[0]}}</td>
+                    <td>{{line[1]}}</td>
+                    <td>{{line[2]}}</td>
+                    <td>{{line[3]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
+    {% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [          
+          {searchable: false},
+          {orderable: false, searchable: false},
+          {orderable: false, searchable: false},
+          null],
+      });
+    });
+  </script>
+{% endblock %}
+</div>
+</div>
+        </div>
+        </body>
+</html> 
