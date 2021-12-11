@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, request, render_template, flash
-from ..calc.calculate import Calculate
+from calc.calculate import Calculate
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
@@ -39,7 +39,8 @@ def calc():
 
 @app.route('/results', methods = ['GET'])
 def results():
-    return render_template('table.html', title='Bootstrap Table', df=Calculate.getDF())
+    #return render_template('table.html', title='Bootstrap Table', df=Calculate.getDF())
+    return render_template('index.html')
 
 if __name__ == '__main__':
-   app.run(debug = True,port=7894)
+   app.run()

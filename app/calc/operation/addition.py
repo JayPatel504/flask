@@ -1,6 +1,6 @@
 """Add Class"""
 #pylint: disable=E0401
-from operation.calculation import Calculation
+from .calculation import Calculation
 
 class Addition(Calculation):
     """ calculation addition class"""

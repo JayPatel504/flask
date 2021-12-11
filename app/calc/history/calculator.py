@@ -4,8 +4,8 @@ from ..operation.addition import Addition
 from ..operation.subtraction import Subtraction
 from ..operation.multiplication import Multiplication
 from ..operation.division import Division
-from ...csv.readCSV import Reading
-from ...csv.writeCSV import Writing
+from ..csv.readCSV import Reading
+from ..csv.writeCSV import Writing
 
 class Calculator:
     """ This is the Calculator class"""

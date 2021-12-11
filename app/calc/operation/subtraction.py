@@ -1,5 +1,5 @@
 """Subtraction Class"""
-from operation.calculation import Calculation
+from .calculation import Calculation
 
 class Subtraction(Calculation):
     """subtraction calculation object"""

@@ -1,5 +1,5 @@
 """ This is the increment function"""
-from calc.history.calculator import Calculator
+from .history.calculator import Calculator
 
 #the calculator class just contains the methods to calculate
 class Calculate:
