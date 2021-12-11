@@ -35,3 +35,10 @@ class Calculate:
     def getHistory():
         """ Get history """
         return Calculator.history
+    def getHistoryFromCSV():
+        """Read from CSV"""
+        return Calculator.readHistoryFromCSV()
+    @staticmethod
+    def writeHistoryToCSV():
+        """Write to CSV """
+        return Calculator.writeHistoryToCSV()

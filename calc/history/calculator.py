@@ -4,6 +4,10 @@ from operation.addition import Addition
 from operation.subtraction import Subtraction
 from operation.multiplication import Multiplication
 from operation.division import Division
+from ...csv.readCSV import Reading
+from ...csv.writeCSV import Writing
+import pandas as pd
+import numpy as np
 
 class Calculator:
     """ This is the Calculator class"""
@@ -61,4 +65,30 @@ class Calculator:
     def divide_numbers(tuple_values: tuple):
         """ divide numbers and store the result"""
         Calculator.add_calculation(Division.create(tuple_values))
+        return True
+    @staticmethod
+    def readHistoryFromCSV():
+        """read entries from CSV, store in history"""
+        df = Reading.read().to_numpy()
+        for x in df:            
+            if 'add' in x[2]:
+                Calculator.add_numbers((x[0],x[1]))
+            elif 'sub' in x[2]:
+                Calculator.subtract_numbers((x[0],x[1]))
+            elif 'multi' in x[2]:
+                Calculator.multiply_numbers((x[0],x[1]))
+            else:
+                Calculator.divide_numbers((x[0],x[1]))             
+        return True
+    @staticmethod
+    def writeHistoryToCSV():
+        """read from history, write to CSV"""
+        q=[]
+        for x in Calculator.history:
+            t=list(x.values)
+            t.append(x.__class__.__name__)
+            t.append(x.get_result())
+            q.append(t)
+        ss= np.array(q)
+        Writing.writeL(pd.DataFrame(ss,columns=['Value 1', 'Value 2', 'Operation','Result']))
         return True

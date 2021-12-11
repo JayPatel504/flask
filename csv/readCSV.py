@@ -5,7 +5,7 @@ import os
 
 class Reading:
     '''Reading Class'''
-    def read(file_path):
+    def read():
         '''Read CSV and find what operation is needed'''
         f_path = os.path.join(os.path.abspath(__file__),'..','..',"data/history.csv")
         return pd.read_csv(f_path)

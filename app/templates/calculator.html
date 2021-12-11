@@ -56,26 +56,12 @@
             <div class="card bg-dark" style="margin-top: 100px; margin-bottom: 75px;"> 
                 <div class="card-body text-white" style="margin-left: auto;margin-right: auto;">  
                     {% block body %}
-                        <form action="{{ url_for('calc') }}",   method="post">
+                        <form action="{{ url_for('calc') }}", method="post">
                             <input type="text" id="left" name="left" value={{left}} />
                             <input type="text" id="middle" name="middle" value={{middle}} />
                             <input type="text" id="right" name="right" value={{right}} />
                             <input type="submit" value="Get Answer">
-                        </form>
-
-                        {% if csv %}
-                        <table class="text-white">
-                            <tr><th>LEFT</th><th>OP</th><th>RIGHT</th><th>RESULT</th></tr>
-                            {% for line in csv %}
-                            <tr>
-                                <td>{{line[0]}}</td>
-                                <td>{{line[1]}}</td>
-                                <td>{{line[2]}}</td>
-                                <td>{{line[3]}}</td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                        {% endif %}
+                        </form>                        
                     {% endblock %}
                 </div>
             </div>
