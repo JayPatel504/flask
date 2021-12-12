@@ -7,4 +7,7 @@ class Reading:
     def read():
         '''Read CSV and find what operation is needed'''
         f_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','..',"data/history.csv")
-        return pd.read_csv(f_path)
+        try:
+            return pd.read_csv(f_path)
+        except:
+            return pd.DataFrame(columns = ["Value 1","Value2","Operation","Result"])

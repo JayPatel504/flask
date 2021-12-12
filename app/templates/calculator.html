@@ -58,7 +58,13 @@
                     {% block body %}
                         <form action="{{ url_for('calc') }}", method="post">
                             <input type="text" id="left" name="left" value={{left}} />
-                            <input type="text" id="middle" name="middle" value={{middle}} />
+                            <!-- <input type="text" id="middle" name="middle" value={{middle}} /> -->
+                            <select name="middle" id="middle">
+                                <option value="addition">+</option>    
+                                <option value="subtraction">-</option>
+                                <option value="multiplication">*</option>
+                                <option value="division">/</option>
+                            </select>
                             <input type="text" id="right" name="right" value={{right}} />
                             <input type="submit" value="Get Answer">
                         </form>                        
