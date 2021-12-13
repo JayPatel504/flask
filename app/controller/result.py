@@ -9,4 +9,4 @@ class results_fac(ControllerBase):
     @staticmethod
     def table_page():
         '''displays table from df'''
-        return render_template('table.html', title='History Table', df=Calculate.getDF())
+        return render_template('table.html', title='History Table', df=Calculate.getDF().iloc[::-1])

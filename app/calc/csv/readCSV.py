@@ -11,4 +11,4 @@ class Reading:
         try:
             return pd.read_csv(f_path)
         except:
-            return pd.DataFrame(columns = ["Value 1","Value2","Operation","Result"])
+            return pd.DataFrame(columns = ["Value1","Value2","Operation","Result"])

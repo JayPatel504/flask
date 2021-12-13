@@ -1,14 +1,8 @@
-Value 1,Value2,Operation,Result
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Addition,2.0
-1.0,1.0,Division,1.0
-1.0,1.0,Subtraction,-2.0
-2.0,2.0,Division,1.0
-1.0,2.0,Addition,3.0
-1.0,2.0,Addition,3.0
-1.0,2.0,Addition,3.0
+Value1,Value2,Operation,Result
+123.0,123.0,Addition,246.0
+123.0,123.0,Subtraction,-246.0
+645.0,1.0,Addition,646.0
+866776.0,45745.0,Multiplication,39650668120.0
+13221.0,467567.0,Subtraction,-480788.0
+55.0,55.0,Addition,110.0
+66.0,66.0,Addition,132.0

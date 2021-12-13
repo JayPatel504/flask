@@ -60,7 +60,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                                {% for index,row in df[::-1].iterrows() %}
+
+                                {% for index,row in df.iterrows() %}
                                 <tr class="text-white">
                                     <td>{{row[0]}}</td>
                                     <td>{{row[1]}}</td>
@@ -75,7 +76,8 @@
                     <script>
                         $(document).ready(function () {
                         $('#data').DataTable({
-                            columns: [null,null,null,null],
+                            "order": [], 
+                            columns: [{orderable: false,searchable: false},{orderable: false,searchable: false},{orderable: false},{orderable: false,searchable: false}],
                         });
                         });
                     </script>
