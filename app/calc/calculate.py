@@ -1,4 +1,5 @@
 """ This is the increment function"""
+#pylint: disable=E0401,E1136,E0213,E1135,C0103,E0211
 from .history.calculator import Calculator
 
 #the calculator class just contains the methods to calculate
@@ -28,7 +29,7 @@ class Calculate:
         return True
     @staticmethod
     def division(tuple_values: tuple):
-        """ multiplication number from result"""
+        """ divide number from result"""
         Calculator.divide_numbers(tuple_values)
         return True
     @staticmethod

@@ -1,5 +1,5 @@
 """ This is the increment function"""
-
+#pylint: disable=E0401,E0213,E1101,R0903,R1732,C0103,C0301
 from ..operation.addition import Addition
 from ..operation.subtraction import Subtraction
 from ..operation.multiplication import Multiplication
@@ -68,13 +68,17 @@ class Calculator:
     @staticmethod
     def writeHistoryToCSV():
         """read from history, write to CSV"""
-        x=Calculator.get_last_calculation()
-        t=list(x.values)
-        t.append(x.__class__.__name__)
-        t.append(x.get_result())
-        Calculator.df.loc[len(Calculator.df.index)] = t
+        last_result=Calculator.get_last_calculation()
+        calc_list=list(last_result.values)
+        calc_list.append(last_result.__class__.__name__)
+        calc_list.append(last_result.get_result())
+        print("129-jrfnek")
+        print(calc_list)
+        Calculator.df.loc[len(Calculator.df.index)] = calc_list
+
         Writing.writeL(Calculator.df)
         return True
     @staticmethod
     def getdf():
+        '''get df'''
         return Calculator.df

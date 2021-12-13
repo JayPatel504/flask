@@ -1,21 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>Caculator</title>
         <meta name="author" content="Jay Patel" />
-        <meta name="description" content="" />
-        <script src="static/js/jquery-3.3.1.slim.min.js"></script>
-        <script src="static/js/popper.min.js"></script>
-        <script src="static/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="static/css/temp.css">
+        <meta name="description" content="page with calculator app" />
+        <script src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/temp.css') }}">
     </head>
-
     <body class="bg-secondary">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-flex">
                 <div class="">
-                    <a class="navbar-brand" href="">Where is this?</a>
+                    <a class="navbar-brand" href="">Caculator</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -32,9 +32,8 @@
                             <li class="nav-item">
                                 <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ url_for('results') }}">Table</a>
                             </li>
-                            
                             <li class="nav-item">
-                                <a class="nav-link btn btn-sm btn-outline-secondary" href="search.html">Internet Search</a>
+                                <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ url_for('four') }}">Flask</a>
                             </li>
                         </ul>
                     </div>
@@ -53,12 +52,11 @@
                     {% endif %}
                 {% endwith %}
             </div>
-            <div class="card bg-dark" style="margin-top: 100px; margin-bottom: 75px;"> 
-                <div class="card-body text-white" style="margin-left: auto;margin-right: auto;">  
+            <div class="card bg-dark" style="margin-top: 100px; margin-bottom: 75px;margin-left: auto;margin-right: auto;"> 
+                <div class="card-body" style="margin-left: auto;margin-right: auto;">  
                     {% block body %}
                         <form action="{{ url_for('calc') }}", method="post">
                             <input type="text" id="left" name="left" value={{left}} />
-                            <!-- <input type="text" id="middle" name="middle" value={{middle}} /> -->
                             <select name="middle" id="middle">
                                 <option value="addition">+</option>    
                                 <option value="subtraction">-</option>
@@ -75,7 +73,7 @@
                 <div class="d-flex justify-content-between p-3 text-white">
                     <div><a class="text-white" href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fjhp54.eastus.azurecontainer.io%2Findex.html">W3C</a></div>
                     <div>©2021 Copyright</div>
-                    <div>Authors: <a class="text-white" href="https://github.com/JayPatel504/historyweb">Jay Patel</a></div>
+                    <div>Authors: <a class="text-white" href="https://github.com/JayPatel504/flask/tree/part3">Jay Patel</a></div>
                 </div>
             </div>
         
