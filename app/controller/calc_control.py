@@ -24,7 +24,12 @@ class calcControl(ControllerBase):
             flash("Missing Value")
             return render_template('calculator.html',left='1',right='1')
 
-        flash("Result Generated")
         getattr(Calculate(), middle)((left,right))
+
+        if Calculate.get_last_result_value() == "Can't divide by zero":
+            flash("Can't divide by zero")
+            return render_template('calculator.html',left='1',right='1')
+
+        flash("Result Generated")
         Calculate.writeHistoryToCSV()
         return render_template('calculator.html',left='1',right='1')
